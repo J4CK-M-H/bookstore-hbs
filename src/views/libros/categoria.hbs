@@ -1,0 +1,39 @@
+{{#if categoria}}
+<div class="contenedor-libros">
+
+  <section class="contenedor-libros-grid">
+
+    {{#each libros}}
+    <article class="contenedor-libros-grid__items">
+      <img class="libro-poster" src="../uploads/{{poster}}" alt="imagen-libro">
+      <div class="libro-info">
+        <p><b>Libro:</b> {{titulo}}</p>
+        <p><b>Autor:</b> {{autor}}</p>
+        <p><b>Precio:</b> S/.{{precio}}</p>
+        {{!-- <a href="" class="">Agregar</a> --}}
+        <form>
+          <input type="hidden" name="autor" id="autor" value="{{autor}}">
+          <input type="hidden" name="titulo" id="titulo" value="{{titulo}}">
+          <input type="hidden" name="precio" id="precio" value="{{precio}}">
+          <input type="hidden" name="id" id="id" value="{{id}}">
+        </form>
+        <button>Agregar</button>
+      </div>
+    </article>
+    {{/each}}
+
+
+
+  </section>
+
+</div>
+{{else}}
+
+<div class="contenedor-libros">
+  {{!-- <h1>{{message}}</h1> --}}
+  {{> 404}}
+</div>
+
+{{/if}}
+
+  <script src="/script/carrito.js"></script>

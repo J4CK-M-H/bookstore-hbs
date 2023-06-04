@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/app.css">
+  <title>{{title}}</title>
+</head>
+
+<body>
+
+  {{#if navbar }}
+  <header>
+    <nav class="nav">
+      <a href="/" class="nav__title">Bookstore</a>
+      {{!-- <h3 class="nav__title">Bookstore</h3> --}}
+      <ul class="nav-menu">
+        {{#if usuario}}
+        <li class="menu__item">
+          <a class="menu__link" href="/categorias">Categorias</a>
+        </li>
+        <li class="menu__item">
+          <a href="/perfil" class="menu__link">Perfil</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="/carrito">Carrito</a>
+        </li>
+        <li class="menu__item">
+          <form action="/logout" method="POST">
+            <input type="submit" class="logout-button" value="Logout">
+          </form>
+          {{!-- <a class="menu__link" href="/logout">Logout</a> --}}
+        </li>
+        {{else}}
+        <li class="menu__item">
+          <a class="menu__link" href="/categorias">Categorias</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="/login">Log in</a>
+        </li>
+        {{/if}}
+
+      </ul>
+    </nav>
+  </header>
+  {{/if}}
+
+
+  <main>
+    {{{body}}}
+  </main>
+
+</body>
+
+</html>

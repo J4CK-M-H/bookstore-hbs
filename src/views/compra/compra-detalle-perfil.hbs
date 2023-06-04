@@ -1,0 +1,56 @@
+<div class="perfil-container">
+
+  <div class="datos-perfil">
+
+    <figure>
+      <img class="imagen-perfil" src="/imgs/perfil-default.webp" alt="no hay imagen">
+    </figure>
+
+    <div class="datos-perfil__info">
+      <p> <b>Usuario:</b> {{usuario.nombre}} {{usuario.apellido}}</p>
+      <p> <b>Email:</b> {{usuario.correo}}</p>
+      <p> <b>Miembro desde:</b> {{usuario.createdAt}}</p>
+      <p> <b>Compras:</b> realizadas: 10</p>
+    </div>
+  </div>
+
+  <div class="scroll-compras" style="flex: 1; padding: 0 1rem">
+    <h3 style="text-align: center; font-size: 1.8rem">Historial de compras</p>
+
+      {{#if detalles}}
+      <div class="contenedor-compras">
+
+        {{#each detalles}}
+        <div class="contenedor-compras__item">
+          <div>
+            <p><b>Libro:</b> {{titulo}}</p>
+            <p><b>Precio:</b> S/.{{precio}}</p>
+            <p><b>Cantidad:</b> {{cantidad}}</p>
+            <p><b>Subtotal:</b> S/.{{subtotal}}</p>
+          </div>
+        </div>
+        {{/each}}
+        <a href="/perfil" style="
+          display: block;
+          background-color: #19A7CE;
+          color: #fff;
+          padding: .8rem 0;
+          width: 150px;
+          margin: 0 auto;
+          border-radius: .4rem;
+        "
+        >Regresar</a>
+      </div>
+      {{else}}
+      <h2 style="
+        text-align: center;
+        height: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: normal;
+        ">No hay compras realizadas aún</h2>
+      {{/if}}
+  </div>
+</div>
+</div>

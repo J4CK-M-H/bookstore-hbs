@@ -1,0 +1,481 @@
+*,*::before,*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Rubik', sans-serif;
+  background-color: var(--background-pages);
+}
+
+ul,li {
+  list-style: none;
+}
+
+p, div {
+  font-weight: normal;
+  font-size: initial;
+}
+
+a{
+  text-decoration: none;
+}
+
+:root {
+  --main--color: #19A7CE;
+  --background-pages: #ECF9FF;
+  --field: #F0F0F0;
+  --heigh-calc: calc(100vh - 80px)
+}
+
+/* header {
+  position: fixed;
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+} */
+
+.nav {
+  display: flex;
+  align-items: center;  
+  justify-content: space-between;
+  height: 80px;
+  max-height: 80px;
+  background-color: var(--main--color);
+  padding: 0 2rem;
+}
+
+.nav__title {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0 .7rem;
+}
+
+.menu__link, .logout-button {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: .8rem ;
+  border-radius: 6px;
+}
+
+.logout-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.menu__link:hover, .logout-button:hover { 
+  background-color: #393646;
+}
+
+/* TODO: PENSAR OTRA FORMA DE DARLE EL PADDING, YA QUE AL LOGIN Y AL REGISTRO TAMBIEN AFECTARA ELLO,
+   TODO: Y DESCUADRA EL DISEÑO DE AMBOS
+*/
+
+/* *FORM */
+
+  .form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: azure;
+  }
+  
+  .form-login {
+    width: 450px;
+    min-height: 450px;
+    padding: 0 1rem;
+    min-width: 280px;
+    background-color: #fff;
+    position: relative;
+    box-shadow: 5px 5px 15px #DDE6ED,
+    -5px 0 15px #DDE6ED;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-header {
+    width: 450px;
+    height: 100px;
+    margin: 0 -16px 10px;
+    background-image: url('../imgs/wave.jpg');
+    background-position: center;
+    background-size: cover;
+  }
+
+
+  .form-content {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form-group {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .check-group {
+    display: flex;
+    justify-content: start;
+    width: 90%;
+    gap: .5rem;
+    margin: 10px 0;
+  }
+
+  .label {
+    font-size: 1.1rem;
+    width: 90%;
+    display: block;
+    margin: 0 auto 5px;
+    text-transform: capitalize;
+  }
+
+  .field {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    padding:.9rem .7rem;
+    border: .8px solid #DDE6ED;
+    /* border: none; */
+    /* border-radius: 4px; */
+    /* box-shadow: 1px 1px 1px 0 #DDE6ED, */
+                /* -1px -1px 1px 0 #DDE6ED; */
+    outline: none;
+  }
+
+  .btn-login {
+    display: block;
+    width: 90%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: .6rem 0;
+    background-color: #3E54AC;
+    color: #fff;
+    padding: .9rem 0;
+    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
+  .btn-login:hover {
+    background-color: #274ce0;
+  }
+
+  .error-input, .success-input {
+    background-color: #ED2B2A;
+    width: 90%;
+    padding: .6rem 0;
+    border-radius: 4px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .success-input {
+    background-color: rgb(9, 187, 9);
+  }
+
+
+  .link-form {
+    margin: 20px auto;
+    color: #7d7a7a;
+  }
+
+  .link-form a {
+    font-weight: bold;
+    color: #000;
+  }
+
+/* *FORM */
+
+div {
+  margin: 0;
+  padding: 0;
+}
+
+
+/** Pagina Perfil */
+
+.perfil-container {
+  height: calc(100vh - 80px);
+  display: flex; 
+  padding: 1rem 0;
+  /* background: red; */
+  overflow: hidden;
+}
+
+.datos-perfil {
+  padding: 0 1rem;  
+  height: 100%; 
+  flex: 1; 
+  border-right: .5px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem 0;
+}
+
+.imagen-perfil {
+  border-radius: 50%; 
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  border: 10px solid #fff;
+  box-shadow: 2px 2px 5px #ccc,
+              -2px -2px 5px #ccc;
+}
+
+.datos-perfil__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem 0;
+}
+
+
+/* TODO: FIJAR EL CONTENEDOR Y DARLE SCROLL */
+.scroll-compras {
+  overflow-y: scroll;
+  /* height: 100vh; */
+}
+
+
+.contenedor-compras__item {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  box-shadow: .5px .5px 3px #ccc,
+              -.5px -.5px 3px #ccc;
+  padding: .5rem 1rem;
+  border-radius: 5px;
+}
+
+.contenedor-compras__item p {
+  text-align: start;
+}
+
+.contenedor-compras__button {
+  display: flex;
+  width: 100px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background-color: #00C4FF;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+/** Pagina Perfil */
+
+
+/** Pagina Categorias */
+
+.contenedor-categorias {
+  height: var(--heigh-calc);
+  display: flex;
+  justify-content: center;
+  gap: 0 1rem;
+  align-items: center;
+}
+
+.categoria {
+  display: block;
+  width: 280px;
+  height: 380px;
+  position: relative;
+  overflow: hidden;
+}
+
+.poster-categoria {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform .5s ease;
+}
+
+.link-categoria {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  background-color: rgba(0,0,0,.5);
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: bold;
+  transition: opacity .5s ease;
+}
+
+.categoria:hover .link-categoria{
+  opacity: .9;
+}
+
+.categoria:hover .poster-categoria {
+  transform: scale(1.2);
+}
+
+/** Pagina Categoria */
+
+.contenedor-libros {
+  padding: 2rem 1rem;
+}
+
+.contenedor-libros-grid {
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  /* grid-template-rows: 28rem; */
+  gap: 1rem;
+}
+.contenedor-libros-grid__items {
+  background-color: #fff;
+  box-shadow: 1px 1px 8px #ccc,
+              -1px -1px 8px #ccc;
+  padding: .9rem;
+}
+
+.libro-poster {
+  width: 100%;
+  max-height: 350px;
+  margin-bottom: 5px;
+}
+
+.libro-info {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  text-transform: capitalize;
+}
+
+.libro-info a, .libro-info button{
+  display: block;
+  /* background: green; */
+  height: 40px;
+  text-align: center;
+  /* color: #fff; */
+  line-height: 40px;
+  border: 2px solid green;
+  color: green;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.libro-info a:hover {
+  background-color: green;
+  color: #fff;
+}
+/** Pagina Categoria */
+
+.img-animation {
+  animation: 1s linear infinite;
+}
+
+@keyframes animacion {
+  0% {
+      transform: scale(1)
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+
+/** carrito */
+
+.contenedor-carrito {
+  min-height: var(--heigh-calc);
+  padding: 1rem;
+}
+
+.contenedor-carrito h2 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.table-carrito {
+  /* border: 2px solid #B2B2B2; */
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+th,td {
+  width: 150px;
+  border: .5px solid #B2B2B2;
+  vertical-align: middle;
+  padding: .3rem;
+  caption-side: bottom;
+}
+
+caption {
+  padding: 0.3rem;
+  color: #fff;
+  background: #000;
+}
+
+th {
+  background: #eee;
+}
+
+.table-carrito button{
+  width: 80%;
+  padding: .7rem 0;
+}
+
+
+.ocultar-texto {
+  width: 200px;
+  max-width: 300px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/** carrito */
+
+.about p{
+  font-size: 1.2rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+
+.footer {
+  height: 80px;
+  background-color: var(--main--color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer p{
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: bold;
+}

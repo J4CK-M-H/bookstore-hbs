@@ -1,0 +1,45 @@
+<div class="contenedor-carrito">
+
+  {{#if message}}
+  <div
+    style="height: calc(100vh - 112px); display: flex; flex-direction: column; justify-content: center; align-items:center">
+
+    <h2>Carrito vacio, comienza a agregar productos</h2>
+    <img style="width: 250px; height: 220px;" src="/imgs/agregar-carrito.png" alt="agregar-imagen">
+  </div>
+  {{else}}
+  <h2>Carrito de compras</h2>
+  <table class="table-carrito">
+    <thead>
+      <tr>
+        <th>N°</th>
+        <th>Libro</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th>subtotal</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="table-body">
+
+    </tbody>
+  </table>
+
+  <button disabled="true">Eliminar Producto</button>
+  <button>Vaciar Carrito</button>
+  <a id="comprar" href="/comprar">Comprar</a>
+</div>
+
+<script src="/script/obtener-productos.js"></script>
+{{/if}}
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+
+  if(document.cookie.includes('mensaje')){
+    swal("Compra realizada!", "Gracias por su compra!", "success");
+    document.cookie = "mensaje=ok; max-age=0;";
+    localStorage.removeItem('carrito');
+  }
+
+</script>

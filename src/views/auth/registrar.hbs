@@ -1,0 +1,55 @@
+<div class="form-container">
+  <form action="/registrar" class="form-login" method="POST" novalidate>
+
+    <div class="form-header"></div>
+
+    <div class="form-content">
+
+        {{#if errors}}
+          {{#each errors}}
+            <p class="error-input">{{msg}}</p>
+          {{/each}}
+        {{/if}}
+
+        {{#if ok}}
+            <p class="success-input">{{ok}}</p>
+        {{/if}}
+
+      <div class="form-group">
+        <label for="nombre" class="label">Nombre:</label>
+        <input type="text" name="nombre" class="field" id="nombre" placeholder="Enter Nombre" 
+          value={{usuario.nombre}}>
+      </div>
+
+      <div class="form-group">
+        <label for="apellido" class="label">Apellido:</label>
+        <input type="text" name="apellido" class="field" id="apellido" placeholder="Enter Apellido" 
+          value={{usuario.apellido}}>
+      </div>
+
+      <div class="form-group">
+        <label for="correo" class="label">Correo:</label>
+        <input type="text" name="correo" class="field" id="correo" placeholder="Enter Correo" 
+          value={{usuario.correo}}>
+      </div>
+
+      <div class="form-group">
+        <label for="password" class="label">password:</label>
+        <input type="password" name="password" class="field" id="passwordForm" placeholder="Enter password">
+      </div>
+
+      <div class="check-group">
+        <input type="checkbox" name="check" id="check">
+        <label for="check">show password</label>
+      </div>
+
+      <button type="submit" class="btn-login">Registrar</button>
+
+      <span class="link-form">¿Ya tienes cuenta?, <a href="/login">Login</a></span>
+
+    </div>
+
+  </form>
+</div>
+  <script src="/script/main.js"></script>
+

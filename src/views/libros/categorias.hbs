@@ -1,0 +1,11 @@
+{{#if categorias}}
+  <div class="contenedor-categorias">
+
+  {{#each categorias}}
+    <div class="categoria">
+      <img class="poster-categoria" src="/imgs/{{categoria}}.jpg" alt="">
+      <a href="/categorias/{{categoria}}" class="link-categoria">{{categoria}}</a>
+    </div>
+  {{/each}}
+  </div>
+{{/if}}
